@@ -102,7 +102,7 @@ func armor(){
         }
         else{
             armor2 = true
-            inv1[findItemInInventory(inv: inv1, nameOfItem: "Броня")] = "-"
+            inv2[findItemInInventory(inv: inv2, nameOfItem: "Броня")] = "-"
         }
     }
 }
@@ -338,13 +338,13 @@ func game(){
     while true{
         action = 7
         choise = "-1"
-        if life1 == 0{
+        if life1 <= 0{
             clearConsole()
             print("Поздравляю ", player2, " с его победой")
             sleep(3)
             return
         }
-        else if life2 == 0{
+        else if life2 <= 0{
             clearConsole()
             print("Поздравляю ", player1, " с его победой")
             sleep(3)
@@ -463,6 +463,7 @@ func information(){
 func menu(){
     while true{
         clearConsole()
+        
         print("  _   _          ___          _     _   \n",
               " | |_| |_  ___  | _ \\___ _  _| |___| |_ \n",
               " |  _| ' \\/ -_) |   / _ \\ || | / -_)  _|\n",
